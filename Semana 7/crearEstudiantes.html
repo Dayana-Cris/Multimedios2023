@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Crear Estudiantes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <div class="container-fluid m-0 p-0">
+        <header>
+            <div class="mb-2" id="cargarMenu"></div>
+        </header>
+        <main class="m-5">
+            <h1 class="text-center">Agregar Estudiantes</h1>
+            <div class="container-fluid">
+                <form id="formulario">
+                    <div class="mb-3">
+                        <label for="" class="form-label">Cédula</label>
+                        <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
+                            placeholder="Ingrese la cédula del estudiante">
+                        <small id="helpId" class="form-text text-muted">Ingresa cedula</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                            placeholder="Ingrese el nombre del estudiante">
+                        <small id="helpId" class="form-text text-muted">Nombre del profesor</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Apellido paterno</label>
+                        <input type="text" class="form-control" name="apellidoPaterno" id="apellidoPaterno"
+                            aria-describedby="helpId" placeholder="Ingrese el apellido paterno">
+                        <small id="helpId" class="form-text text-muted">Ingresa Apellido paterno </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Apellido materno</label>
+                        <input type="text" class="form-control" name="apellidoPMterno" id="apellidoMaterno"
+                            aria-describedby="helpId" placeholder="Ingrese el apellido materno">
+                        <small id="helpId" class="form-text text-muted">Ingresa Apellido materno</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="correoElectronico" id="correoElectronico"
+                            aria-describedby="helpId" placeholder="Ingrese el correo electronico">
+                        <small id="helpId" class="form-text text-muted">Ingresa Correo electrónico</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Teléfono</label>
+                        <input type="text" class="form-control" name="telefono" id="telefono" aria-describedby="helpId"
+                            placeholder="Ingrese el telefono">
+                        <small id="helpId" class="form-text text-muted">Ingresa Teléfono </small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Teléfono Celular</label>
+                        <input type="text" class="form-control" name="telefonoCelular" id="telefonoCelular" aria-describedby="helpId"
+                            placeholder="Ingrese el telefono delular">
+                        <small id="helpId" class="form-text text-muted">IngresaTeléfono celular</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Fecha Nacimiento</label>
+                        <input type="text" class="form-control" name="fechaNacimiento" id="fechaNacimiento"
+                            aria-describedby="helpId" placeholder="Ingrese la fecha de nacimiento">
+                        <small id="helpId" class="form-text text-muted">Ingresa Fecha Nacimiento</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Sexo</label>
+                        <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="helpId"
+                            placeholder="Ingrese el sexo">
+                        <small id="helpId" class="form-text text-muted">Ingresa genero</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Dirección</label>
+                        <input type="text" class="form-control" name="direccion" id="direccion"
+                            aria-describedby="helpId" placeholder="Ingrese la dirección ">
+                        <small id="helpId" class="form-text text-muted">Ingresa Dirección</small>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Nacionalidad</label>
+                        <input type="text" class="form-control" name="nacionalidad" id="nacionalidad"
+                            aria-describedby="helpId" placeholder="Ingrese la Nacionalidad">
+                        <small id="helpId" class="form-text text-muted">Ingresa Nacionalidad</small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Grupo</label>
+                          <select name="selectGrupo"  id="selectGrupo">
+                            <option disabled selected value="">Seleccione uno</option>
+                          </select>
+                      </div>
+
+                    <div class="text-center">
+                        <button type="reset" class="btn btn-danger me-3">Limpiar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                      </div>        
+                </form>
+            </div>
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+            </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+            integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+            </script>
+
+        <script>
+           var cargarMenu = document.querySelector("#cargarMenu");
+            var formulario = document.getElementById('formulario');
+            var cargarGrupos = document.querySelector('#selectGrupo');
+
+            formulario.addEventListener('submit', function (e) {
+                alert('Salvando');
+                e.preventDefault();//para que no se recargue la pagina 
+
+                var cedula = document.getElementById('cedula').value;
+                var nombre = document.getElementById('nombre').value;
+                var apellidoPaterno = document.getElementById('apellidoPaterno').value;
+                var apellidoMaterno = document.getElementById('apellidoMaterno').value;
+                var correoElectronico = document.getElementById('correoElectronico').value;
+                var telefono = document.getElementById('telefono').value;
+                var telefonoCelular = document.getElementById('telefonoCelular').value;
+                var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+                var sexo = document.getElementById('sexo').value;
+                var direccion = document.getElementById('direccion').value;
+                var nacionalidad = document.getElementById('nacionalidad').value;
+                var idCarreras =document.getElementById('selectGrupo').value;
+
+                var datosEnviar = {
+                    cedula: cedula,
+                    correoelectronico: correoElectronico,
+                    telefono: telefono,
+                    telefonocelular: telefonoCelular,
+                    fechanacimiento: fechaNacimiento,
+                    sexo: sexo,
+                    direccion: direccion,                    
+                    nombre: nombre,
+                    apellidopaterno: apellidoPaterno,
+                    apellidomaterno: apellidoMaterno,
+                    nacionalidad: nacionalidad,
+                    idCarreras: idCarreras,
+                    usuario: "Profesora D"                    
+                }
+                console.log(datosEnviar)
+
+                fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarEstudiantes.php",
+                    {
+                        method: 'POST',
+                        body: JSON.stringify(datosEnviar)//convierte un objeto o valor de JavaScript en una cadena de texto JSON
+                    }
+                )
+                    .then(respuesta => respuesta.json())
+                    .then((datosrespuesta) => {
+                        console.log('Datos', datosrespuesta,selectGrupo)
+                    })
+                    .catch(console.log)
+            });
+            
+            function cargarGrupo(){
+                fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de datos
+                .then(respuesta => respuesta.json())//recibe los datos en formato json
+                .then((datosrespuesta) => {
+                
+                for (const valor of datosrespuesta.data) {
+                    cargarGrupos.innerHTML += `
+                       <option value="${valor.id}">${valor.nombre}</option>`; 
+                    }
+            })
+            .catch(console.log)//muestra errores
+    }
+    cargarGrupo();
+
+        </script>
+        <script src="menu.js"></script>
+        <script>
+          var triggerEl = document.querySelector('#navId a')
+        </script>
+</body>
+
+</html>

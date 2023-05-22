@@ -1,0 +1,14 @@
+body{
+    background-image: url(img/Inicio/turquesa.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+h1{
+    font-size: 50px;
+}
+
+.menu{
+    background-color: rgb(11, 80, 94);
+    color: white;
+    
+}

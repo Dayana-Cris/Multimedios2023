@@ -19,31 +19,20 @@
           <div class="mb-2" id="cargarMenu"></div>
           </header>
           <main class="m-5">
-            <h1 class="text-center">Agregar Curso</h1>
+            <h1 class="text-center">Agregar Grupo</h1>
             <form id="formulario">
-                <div class="mb-3">
-                  <label for="" class="form-label">Nombre</label>
-                  <input type="text"
-                    class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese el nombre del curso">
-                  <small id="helpId" class="form-text text-muted">Nombre del curso</small>
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Descripcion</label>
-                    <input type="text"
-                      class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Ingrese la descripcion del curso">
-                    <small id="helpId" class="form-text text-muted">Descripcion del curso</small>
-                  </div>
-                  <div class="mb-3">
-                    <label for="" class="form-label">Tiempo</label>
-                    <input type="text"
-                      class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="Ingrese el tiempo del curso">
-                    <small id="helpId" class="form-text text-muted">Tiempo del curso</small>
-                  </div>
-                  <div class="text-center">
-                    <button type="reset" class="btn btn-danger me-3">Limpiar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                  </div>
-            </form>
+              <div class="mb-3">
+                <input type="hidden" id="id" name="id">
+                <label for="" class="form-label">Nombre</label>
+                <input type="text"
+                  class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del grupo">
+                <small id="helpId" class="form-text text-muted">Ingresa el nombre del grupo</small>
+              </div>  
+              <div class="text-center">
+                <button type="reset" class="btn btn-danger me-3">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+              </div>                   
+          </form>
           </main>
           <footer>
             <!-- place footer here -->
@@ -68,18 +57,13 @@
       e.preventDefault();//para que no se recargue la pagina 
       
       var nombre = document.getElementById('nombre').value;
-      var descripcion = document.getElementById('descripcion').value;
-      var tiempo = document.getElementById('tiempo').value;
 
       var datosEnviar = {
-          nombre: nombre,
-          descripcion: descripcion,
-          tiempo: tiempo,
-          usuario: "Profesora D"
+          nombre: nombre
       }
       console.log(datosEnviar)
 
-      fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
+      fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarGrupo.php",
           {
               method: 'POST',
               body: JSON.stringify(datosEnviar)//convierte un objeto o valor de JavaScript en una cadena de texto JSON
