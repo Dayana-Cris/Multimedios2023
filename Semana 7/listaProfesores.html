@@ -273,7 +273,6 @@
                 fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de datos
                 .then(respuesta => respuesta.json())//recibe los datos en formato json
                 .then((datosrespuesta) => {
-                
                 for (const valor of datosrespuesta.data) {
                     cargarGrupos.innerHTML += `
                        <option value="${valor.id}">${valor.nombre}</option>`; 
