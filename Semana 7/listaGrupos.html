@@ -10,88 +10,150 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css"></link>
+  <link rel="stylesheet" href="estilos.css">
+  </link>
 </head>
 
 <body>
-<div class="container-fluid m-0 p-0">
-    <header>
-      <div class="mb-2" id="cargarMenu"></div>
-    </header>
-      <main>
-        
-        <div class="table-responsive">
-            <h1 class="text-center">Consulta de Grupos</h1>
-            <table class="table table-striped
+
+  <header>
+    <div class="mb-2" id="cargarMenu"></div>
+  </header>
+  <main>
+    <div class="container-fluid">
+      <div class="table-responsive">
+        <h1 class="text-center">Consulta de Grupos</h1>
+        <a name="" id="" class="btn btn-dark mb-2" href="crearGrupo.html" role="button">Agregar [+]</a>
+        <table class="table table-striped
             table-hover	
             table-borderless
             table-primary
             align-middle
             text-center">
-                <thead class="table-light">
-                    <!-- <caption>Lista de cursos</caption> -->
-                    <tr>
-                      <th>Id</th>
-                      <th>Nombre</th>
-                      <th>Accciones</th>
-                    </tr>
-                    </thead>
-                    <tbody class="table-group-divider" id="resultados">
-                        <!-- la función llena la tabla -->                                         
-                    </tbody>
-                    <tfoot>
-                        
-                    </tfoot>
-            </table>            
-        </div>        
-      </main>
-      <footer>
-        <!-- place footer here -->
-      </footer>
+          <thead class="table-dark">
+            <!-- <caption>Lista de cursos</caption> -->
+            <tr>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Accciones</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="resultados">
+            <!-- la función llena la tabla -->
+          </tbody>
+          <tfoot>
+
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="mt-5" id="cargarFooter"></div>
+  </footer>
 
 
-<!-- Modal trigger button -->
+  <!-- Modal trigger button -->
 
-
-<!-- Modal Body -->
-<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+  <!-- Modal Body -->
+  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+  <div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+    aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalTitleId">Editar grupo</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="formulario">
-          <div class="mb-3">
-            <input type="hidden" id="id" name="id">
-            <label for="" class="form-label">Nombre</label>
-            <input type="text"
-              class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre del grupo">
-            <small id="helpId" class="form-text text-muted">Ingresa el nombre del grupo</small>
-          </div>  
-          <div class="mb-3">
-            <button type="reset" class="btn btn-danger">Limpiar</button>
-            <button type="submit" class="btn btn-success">Guardar</button>
-          </div>                      
-      </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+        <div class="modal-body">
+          <form id="formulario">
+            <div class="mb-3">
+              <input required type="hidden" id="id" name="id">
+              <label for="" class="form-label">Nombre</label>
+              <input required type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                placeholder="Nombre del grupo">
+              <small id="helpId" class="form-text text-muted">Ingresa el nombre del grupo</small>
+            </div>
+            <div class="mb-3">
+              <button type="reset" class="btn btn-danger">Limpiar</button>
+              <button type="submit" class="btn btn-success">Guardar</button>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
+  </div>
+
+  <!-- Modal Editar -->
+  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+  <div class="modal fade" id="modalExitoso" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-info" id="modalTitleId">Proceso exitoso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Proceso realizado de forma exitosa
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Eliminar -->
+  <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+  <div class="modal fade" id="modalBorrar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-warning" id="modalTitleId">Advertencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p id="contenidoModal"></p>
+        </div>
+        <div class="modal-footer" id="botones">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal validar -->
+  <div class="modal fade" id="modalvalidar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-light" id="modalTitleId">Proceso interrumpido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Por favor, no dejar campos vacíos!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script>
     //Declaracion de variables u objetos
@@ -99,89 +161,112 @@
     const myModal = new bootstrap.Modal(document.getElementById('modalId'));
     var formulario = document.getElementById('formulario');
     var cargarMenu = document.querySelector("#cargarMenu");
+    const modalExitoso = new bootstrap.Modal(document.getElementById('modalExitoso'));
+    const modalBorrarC = new bootstrap.Modal(document.getElementById('modalBorrar'));
+    var contenidoModal = document.getElementById("contenidoModal");
+    var botones = document.getElementById("botones");
+    const modalValidacion = new bootstrap.Modal(document.getElementById('modalvalidar'));
 
-    formulario.addEventListener('submit', function(e) {
-        e.preventDefault();
-      alert('salvando');
-       var id = document.getElementById('id').value;
-       var nombre = document.getElementById('nombre').value;
+    formulario.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var id = document.getElementById('id').value;
+      var nombre = document.getElementById('nombre').value;
 
-        var datosenviar = {
-            id: id,
-            nombre:nombre,
-        }
+      var datosenviar = {
+        id: id,
+        nombre: nombre,
+      }
 
+      if(nombre != ""){
         fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarGrupo.php",
         {
-            method:"POST",
-            body:JSON.stringify(datosenviar)
+          method: "POST",
+          body: JSON.stringify(datosenviar)
         })//url de peticion de datos
         .then(respuesta => respuesta.json())//recibe los datos en formato json
-        .then((datosrepuesta) => {    
-            window.location = 'listaGrupos.html'        
-             console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
+        .then((datosrepuesta) => {
+          modalExito();
         })
         .catch(console.log)//muestra errores
+      }else{
+        modalValidacion.show();
+      }
     });
 
-  
-    function cargarDatos(){
-        fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de datos
-        .then(respuesta => respuesta.json())//recibe los datos en formato json
-       .then((datosrepuesta) => {
-            setTabla(datosrepuesta.data)//lo envio para la funcion para darle tratamiento
-       })
-       .catch(console.log)//muestra errores
+    function modalExito() {
+      myModal.hide();
+      modalExitoso.show();
+      contenidoTablaResultado.innerHTML = ` `;
+      cargarDatos();
     }
 
-    function setTabla(datos){
-        console.log('datos', datos);
-        for (const valor of datos) {
-            contenidoTablaResultado.innerHTML += `
+    function modalBorrar(id) {
+      myModal.hide();
+      contenidoModal.textContent = "Desea eliminar el grupo " + id + "?"
+      modalBorrarC.show();
+      botones.innerHTML = ` 
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+        <button type="button" class="btn btn-danger" onclick="eliminar('${id}')">Si</button>`;
+    }
+
+
+    function cargarDatos() {
+      fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de datos
+        .then(respuesta => respuesta.json())//recibe los datos en formato json
+        .then((datosrepuesta) => {
+          setTabla(datosrepuesta.data)//lo envio para la funcion para darle tratamiento
+        })
+        .catch(console.log)//muestra errores
+    }
+
+    function setTabla(datos) {
+      console.log('datos', datos);
+      for (const valor of datos) {
+        contenidoTablaResultado.innerHTML += `
                         <tr class="table-primary" >
                             <td scope="row">${valor.id}</td>
                             <td>${valor.nombre}</td>
                            
                             <td>
-                              <a name="" id="" class="btn btn-danger" onclick="eliminar('${valor.id}')" role="button">Borrar</a>
+                              <a name="" id="" class="btn btn-danger" onclick="modalBorrar('${valor.id}')" role="button">Borrar</a>
                               <a name="" id="" class="btn btn-primary" onclick="editar('${valor.id}', '${valor.nombre}', '${valor.descripcion}', '${valor.tiempo}')" role="button">Editar</a>
                             </td>
-                        </tr>`; 
-        }
+                        </tr>`;
+      }
     }
 
-    function editar(id, nombre, descripcion, tiempo){
+    function editar(id, nombre, descripcion, tiempo) {
       myModal.show();
       document.getElementById('nombre').value = nombre;
       document.getElementById('id').value = id;
 
     }
 
-    
-    function eliminar(id){
-      alert('Eliminar ' + id);
-    var datosenviar = {
-            id: id
-        }
-        fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarGrupo.php",
+
+    function eliminar(id) {
+      var datosenviar = {
+        id: id
+      }
+      fetch("https://paginas-web-cr.com/ApiPHP/apis/BorrarGrupo.php",
         {
-            method:"POST",
-            body:JSON.stringify(datosenviar)
+          method: "POST",
+          body: JSON.stringify(datosenviar)
         })//url de peticion de datos
         .then(respuesta => respuesta.json())//recibe los datos en formato json
-        .then((datosrepuesta) => {  
-          window.location = 'listaGrupos.html'  
-            // alert(datosrepuesta.data)     
-             console.log('Datos',datosrepuesta)//Muestra el resultado de la peticion
+        .then((datosrepuesta) => {
+          window.location = 'listaGrupos.html'
+          modalBorrarC.hide();
+          modalExito();
         })
         .catch(console.log)//muestra errores
-  }
+    }
     cargarDatos();
   </script>
   <script src="menu.js"></script>
+  <script src="footer.js"></script>
   <script>
     var triggerEl = document.querySelector('#navId a')
-</script>
+  </script>
 </body>
 
 </html>

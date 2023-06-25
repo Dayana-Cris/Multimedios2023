@@ -10,93 +10,138 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css"></link>
+  <link rel="stylesheet" href="estilos.css">
+  </link>
 </head>
 
 <body>
-    <div  class="container-fluid p-0 m-0">
-        <header>
-          <div class="mb-2" id="cargarMenu"></div>
-          </header>
-          <main class="m-5">
-            <h1 class="text-center">Agregar Curso</h1>
-            <form id="formulario">
-                <div class="mb-3">
-                  <label for="" class="form-label">Nombre</label>
-                  <input type="text"
-                    class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Ingrese el nombre del curso">
-                  <small id="helpId" class="form-text text-muted">Nombre del curso</small>
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">Descripcion</label>
-                    <input type="text"
-                      class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId" placeholder="Ingrese la descripcion del curso">
-                    <small id="helpId" class="form-text text-muted">Descripcion del curso</small>
-                  </div>
-                  <div class="mb-3">
-                    <label for="" class="form-label">Tiempo</label>
-                    <input type="text"
-                      class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId" placeholder="Ingrese el tiempo del curso">
-                    <small id="helpId" class="form-text text-muted">Tiempo del curso</small>
-                  </div>
-                  <div class="text-center">
-                    <button type="reset" class="btn btn-danger me-3">Limpiar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                  </div>
-            </form>
-          </main>
-          <footer>
-            <!-- place footer here -->
-          </footer>
+  <div class="container-fluid p-0 m-0">
+    <header>
+      <div class="mb-2" id="cargarMenu"></div>
+    </header>
+    <main class="m-4">
+      <h1 class="text-center">Agregar Curso</h1>
+      <form id="formulario">
+        <div class="mb-3">
+          <label for="" class="form-label">Nombre</label>
+          <input required type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+            placeholder="Ingrese el nombre del curso">
+          <small id="helpId" class="form-text text-muted">Nombre del curso</small>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Descripcion</label>
+          <input required type="text" class="form-control" name="descripcion" id="descripcion" aria-describedby="helpId"
+            placeholder="Ingrese la descripcion del curso">
+          <small id="helpId" class="form-text text-muted">Descripcion del curso</small>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label">Tiempo</label>
+          <input required type="text" class="form-control" name="tiempo" id="tiempo" aria-describedby="helpId"
+            placeholder="Ingrese el tiempo del curso">
+          <small id="helpId" class="form-text text-muted">Tiempo del curso</small>
+        </div>
+        <div class="text-center">
+          <button type="reset" class="btn btn-danger me-3">Limpiar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div class="mt-5" id="cargarFooter"></div>
+    </footer>
+  </div>
+
+  <!-- Modal Agregado -->
+  <div class="modal fade" id="modalAgregado" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-light" id="modalTitleId">Proceso exitoso</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Se agregó correctamente
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
     </div>
-  
+  </div>
+
+  <!-- Modal validar -->
+  <div class="modal fade" id="modalvalidar" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false"
+    role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-dark">
+          <h5 class="modal-title text-light" id="modalTitleId">Proceso interrumpido</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Por favor, no dejar campos vacíos!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-  </script>
+    </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-  </script>
+    </script>
 
-<script>
-  var formulario = document.getElementById('formulario');
-  var cargarMenu = document.querySelector("#cargarMenu");
+  <script>
+    var formulario = document.getElementById('formulario');
+    var cargarMenu = document.querySelector("#cargarMenu");
+    const modalCreado = new bootstrap.Modal(document.getElementById('modalAgregado'));
+    const modalValidacion = new bootstrap.Modal(document.getElementById('modalvalidar'));
 
-  formulario.addEventListener('submit', function (e) {
-      alert('Salvando');
+    formulario.addEventListener('submit', function (e) {
       e.preventDefault();//para que no se recargue la pagina 
-      
+
       var nombre = document.getElementById('nombre').value;
       var descripcion = document.getElementById('descripcion').value;
       var tiempo = document.getElementById('tiempo').value;
 
       var datosEnviar = {
-          nombre: nombre,
-          descripcion: descripcion,
-          tiempo: tiempo,
-          usuario: "Profesora D"
+        nombre: nombre,
+        descripcion: descripcion,
+        tiempo: tiempo,
+        usuario: "Profesora D"
       }
       console.log(datosEnviar)
 
-      fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
-          {
-              method: 'POST',
-              body: JSON.stringify(datosEnviar)//convierte un objeto o valor de JavaScript en una cadena de texto JSON
-          }
+      if (nombre != "" && descripcion != "" && tiempo != ""){
+        fetch("https://paginas-web-cr.com/ApiPHP/apis/InsertarCursos.php",
+        {
+          method: 'POST',
+          body: JSON.stringify(datosEnviar)//convierte un objeto o valor de JavaScript en una cadena de texto JSON
+        }
       )
-          .then(respuesta => respuesta.json())
-          .then((datosrespuesta) => {
-              console.log('Datos', datosrespuesta)
-          })
-          .catch(console.log)
-  });
-</script>
-<script src="menu.js"></script>
-    <script>
-      var triggerEl = document.querySelector('#navId a')
-</script>
- 
+        .then(respuesta => respuesta.json())
+        .then((datosrespuesta) => {
+          modalCreado.show();
+        })
+        .catch(console.log)
+      }else{
+        modalValidacion.show();
+      }
+    });
+  </script>
+  <script src="menu.js"></script>
+  <script src="footer.js"></script>
+  <script>
+    var triggerEl = document.querySelector('#navId a')
+  </script>
+
 </body>
 
 </html>
