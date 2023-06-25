@@ -47,7 +47,9 @@ class ListarCurso extends React.Component {
             })//url de peticion de datos
             .then(respuesta => respuesta.json())//recibe los datos en formato json
             .then((datosrepuesta) => {
-                window.location = '/ListarCurso'
+                // window.location = '/ListarCurso'
+                this.openModal('exitoso')
+                this.cargarDatos()
             })
             .catch(console.log);//muestra errores
     }
@@ -91,15 +93,16 @@ class ListarCurso extends React.Component {
             this.setState({ modalOpen: true })
         }
         if (accion == 'eliminar') {
-            this.setState({ modalBorrar: true, id })
-            
-            
+            this.setState({ modalBorrar: true, id }) 
+        }
+        if (accion == 'exitoso') {
+            this.setState({ modalExitoso: true}) 
         }
 
     }
 
     closeModal() {
-        this.setState({ modalOpen: false, modalBorrar: false })
+        this.setState({ modalOpen: false, modalBorrar: false, modalExitoso:false })
     }
 
     // invocar como el document ready
@@ -109,7 +112,7 @@ class ListarCurso extends React.Component {
 
     render() {
         // aqui pasa a ser una constante
-        const { datosCargados, datosCursos, modalOpen, nombre, descripcion, tiempo, id, usuario, modalBorrar } = this.state
+        const { datosCargados, datosCursos, modalOpen, nombre, descripcion, tiempo, id, usuario, modalBorrar, modalExitoso} = this.state
         return (
             <div className='container'>
                 {/* <Button variant="primary" onClick={() => this.openModal()}>
@@ -194,12 +197,23 @@ class ListarCurso extends React.Component {
                 </div>
                 <Modal show={modalBorrar}>
                     <Modal.Header closeButton onClick={() => this.closeModal()}>
-                        <Modal.Title>Editar Curso</Modal.Title>
+                        <Modal.Title>Eliminar Curso</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <p>¿Estás seguro que deseas eliminar el curso con id {id}</p>
                         <a name="" id="" className="btn btn-danger me-3" onClick={() => this.eliminar(id)} role="button">Si</a>  
                          <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</a>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
+                <Modal show={modalExitoso}>
+                    <Modal.Header className='bg-info' closeButton onClick={() => this.closeModal()}>
+                        <Modal.Title>Proceso exitoso</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Proceso realizado exitosamente</p>
+                        <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
                     </Modal.Body>
                     <Modal.Footer>
                     </Modal.Footer>

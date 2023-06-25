@@ -15,6 +15,7 @@ class ListarEstudiante extends React.Component {
             // arreglo vacio para traer datos
             datosCursos: [],
             modalOpen: false,
+            modalBorrar: false,
             id: "",
             cedula: "",
             correoelectronico: "",
@@ -55,8 +56,9 @@ class ListarEstudiante extends React.Component {
             })//url de peticion de datos
             .then(respuesta => respuesta.json())//recibe los datos en formato json
             .then((datosrepuesta) => {
-                alert("Eliminando")
-                window.location = '/ListarEstudiante'
+                // window.location = '/ListarEstudiante'
+                this.openModal('exitoso')
+                this.cargarDatos()
             })
             .catch(console.log);//muestra errores
     }
@@ -75,7 +77,7 @@ class ListarEstudiante extends React.Component {
             apellidomaterno: objeto.apellidomaterno, nacionalidad: objeto.nacionalidad, idCarreras: objeto.idCarreras,
             usuario: objeto.usuario
         })
-        this.openModal();
+        this.openModal('editar');
     }
 
     enviarDatos = (e) => {
@@ -112,12 +114,20 @@ class ListarEstudiante extends React.Component {
             })
             .catch(console.log)//muestra errores
     }
-    openModal() {
-        this.setState({ modalOpen: true })
+    openModal(accion, id) {
+        if (accion == 'editar') {
+            this.setState({ modalOpen: true })
+        }
+        if (accion == 'eliminar') {
+            this.setState({ modalBorrar: true, id })
+        }
+        if (accion == 'exitoso') {
+            this.setState({ modalExitoso: true})
+        }
     }
 
     closeModal() {
-        this.setState({ modalOpen: false })
+        this.setState({ modalOpen: false, modalBorrar: false, modalExitoso: false })
     }
     cargarGrupos = (e) => {
         // e.preventDefault();
@@ -149,7 +159,7 @@ class ListarEstudiante extends React.Component {
     render() {
         // aqui pasa a ser una constante
         const { datosCargados, datosCursos, modalOpen, id, nombre, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, apellidopaterno,
-            apellidomaterno, nacionalidad, idCarreras, usuario, opciones } = this.state
+            apellidomaterno, nacionalidad, idCarreras, usuario, opciones, modalBorrar, modalExitoso } = this.state
         return (
             <div className='container'>
                 <Modal show={modalOpen}>
@@ -225,10 +235,10 @@ class ListarEstudiante extends React.Component {
                                     placeholder="Ingrese la direccion del estudiante" onChange={this.cambioValor} value={direccion}></input>
                                 {/* <small id="helpId" className="form-text text-muted">Direccion</small> */}
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <label htmlFor="" class="form-label">Grupo</label>
                                 <select className="form-select" value={idCarreras} onChange={this.cambioSelect}>
-                                <option disabled selected value="">Seleccione uno</option>
+                                    <option disabled selected value="">Seleccione uno</option>
                                     {opciones.map((option) => (
                                         <option key={option.id} value={option.id}>{option.nombre}</option>
                                     ))}
@@ -288,7 +298,7 @@ class ListarEstudiante extends React.Component {
                                             <td>{datosExtraidos.usuario}</td>
 
                                             <td>
-                                                <a name="" id="" className="btn btn-danger" onClick={() => this.eliminar(datosExtraidos.id)} role="button">Borrar</a>
+                                                <a name="" id="" className="btn btn-danger" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
                                                 <a name="" id="" className="btn btn-primary" onClick={() => this.editar(datosExtraidos)} role="button">Editar</a>
                                             </td>
                                         </tr>
@@ -297,6 +307,29 @@ class ListarEstudiante extends React.Component {
                         </tbody>
                     </table>
                 </div>
+                <Modal show={modalBorrar}>
+                    <Modal.Header closeButton onClick={() => this.closeModal()}>
+                        <Modal.Title>Eliminar estudiante</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>¿Estás seguro que deseas eliminar el estudiante con id {id}</p>
+                        <a name="" id="" className="btn btn-danger me-3" onClick={() => this.eliminar(id)} role="button">Si</a>
+                        <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</a>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
+                <Modal show={modalExitoso}>
+                    <Modal.Header className='bg-info' closeButton onClick={() => this.closeModal()}>
+                        <Modal.Title>Proceso exitoso</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Proceso realizado exitosamente</p>
+                        <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
 
             </div>
         );
