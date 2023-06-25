@@ -1,5 +1,6 @@
 // trae todo lo que tiene react para que realmente funcione 
 import React from 'react';
+import './dashboard.css';
 // imr y ccc
 // React.Component, para que herede todo lo que tiene el componente
 class Dashboard extends React.Component {

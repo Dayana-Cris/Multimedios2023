@@ -1,0 +1,11 @@
+.fondo{
+    background-image: url("/public/img/educacion.jpg"); 
+    background-repeat: "no-repeat"; 
+    background-size: "cover"
+}
+
+.aumentarLetra:hover,
+.aumentarLetra:focus {
+    font-size: 20px;
+    color: white;
+}
