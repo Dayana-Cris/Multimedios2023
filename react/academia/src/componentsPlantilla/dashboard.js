@@ -52,7 +52,7 @@ class Dashboard extends React.Component {
                                 <div class="border-bottom border-gray border-3 mt-3"></div>
                                 <h2 class="mt-4 mb-4 fw-bold">¿QUIÉNES SOMOS?</h2>
                                 <p class="textJustify">
-                                    DC University es una destacada institución costarricense,
+                                    Universidad DC es una destacada institución costarricense,
                                     reconocida a nivel mundial por su excelencia académica y
                                     compromiso con la formación integral de sus estudiantes. Durante los últimos
                                     10 años, nos hemos enorgullecido de graduar a miles de estudiantes, provenientes

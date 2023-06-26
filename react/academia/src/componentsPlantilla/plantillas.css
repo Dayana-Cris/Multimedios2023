@@ -4,9 +4,13 @@
     background-size: "cover"
 }
 
+.letraColor{
+    color: grey;
+}
+
 .aumentarLetra:hover,
 .aumentarLetra:focus {
-    font-size: 20px;
+    font-size: 18px;
     color: white;
 }
 
@@ -56,9 +60,12 @@
    margin-bottom: 0;
 }
 
+/*//////////////////////////////////////////////////////*/
+
 .espacio{
     margin-bottom: 130px;
 }
 
-
-/*//////////////////////////////////////////////////////*/
+.buttonWhite{
+    background-color: white;
+}

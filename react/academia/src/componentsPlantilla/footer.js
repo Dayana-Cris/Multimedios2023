@@ -8,7 +8,7 @@ class Footer extends React.Component {
     render() {
         return (            
             <div class="col-12 fw-bold text-center p-4 bg-dark text-white footer">
-                DC Universidad. Todos los derechos reservados&copy;2023
+                Universidad DC. Todos los derechos reservados&copy;2023
             </div>
         );
     }
