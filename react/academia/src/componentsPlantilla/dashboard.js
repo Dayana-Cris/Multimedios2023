@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
                             </div>
                         </div>
 
-                        <h2 className='text-center mt-3'>Más información sobre DC University</h2>
+                        <h2 className='text-center mt-3'>Más información sobre Universidad DC</h2>
 
                         <div class="row mt-5 mb-5">
                             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 mt-3 image-container">
