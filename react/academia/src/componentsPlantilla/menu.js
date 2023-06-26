@@ -14,7 +14,6 @@ class Menu extends React.Component {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" className="buttonWhite" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto">
-                        <Nav.Link className='letraColor fw-bold aumentarLetra ms-4' href="/">Inicio</Nav.Link>
                         <Nav.Link className='letraColor fw-bold aumentarLetra ms-4' href="/ListarCurso">Cursos</Nav.Link>
                         <Nav.Link className='letraColor fw-bold aumentarLetra ms-4' href="/CrearCurso">Crear curso</Nav.Link>
                         <Nav.Link className='letraColor fw-bold aumentarLetra ms-4' href="/ListarGrupo">Grupo</Nav.Link>
