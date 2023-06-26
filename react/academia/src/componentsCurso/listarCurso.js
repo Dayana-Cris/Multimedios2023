@@ -205,7 +205,7 @@ class ListarCurso extends React.Component {
                             <Modal.Title>Proceso exitoso</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <p>Proceso realizado exitosamente</p>
+                            <p>Curso eliminado con éxito</p>
                             <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
                         </Modal.Body>
                         <Modal.Footer>

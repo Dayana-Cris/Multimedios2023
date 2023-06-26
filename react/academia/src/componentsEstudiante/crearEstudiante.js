@@ -1,5 +1,6 @@
 import React from "react";
 import './estudiante.css';
+import Modal from 'react-bootstrap/Modal';
 
 class CrearEstudiante extends React.Component {
     constructor(props) {
@@ -19,9 +20,17 @@ class CrearEstudiante extends React.Component {
             idCarreras: "",
             usuario: "",
             datosCargados: false,
-            opciones: []
+            opciones: [],
+            modalExitoso: false
 
         }
+    }
+    openModal() {
+        this.setState({ modalExitoso: true })
+    }
+
+    closeModal() {
+        this.setState({ modalExitoso: false })
     }
 
     cargarGrupos = (e) => {
@@ -83,7 +92,7 @@ class CrearEstudiante extends React.Component {
             .then(respuesta => respuesta.json())//recibe los datos en formato json
             .then((datosrepuesta) => {
                 console.log('Datos', datosrepuesta)
-                window.location = 'ListarEstudiante'
+                this.openModal()
             })
             .catch(console.log)//muestra errores
     }
@@ -92,7 +101,7 @@ class CrearEstudiante extends React.Component {
     }
     render() {
         const { id, nombre, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, apellidopaterno,
-            apellidomaterno, nacionalidad, idCarreras, usuario, datosCargados, opciones } = this.state;
+            apellidomaterno, nacionalidad, idCarreras, usuario, datosCargados, opciones, modalExitoso } = this.state;
         return (
             <div className="container divFormulario mt-4 p-5 mb-5 rounded-3">
                 <h1 className="mb-3">Agregar Estudiante</h1>
@@ -178,6 +187,17 @@ class CrearEstudiante extends React.Component {
                         <button type="submit" className="btn btn-primary">Guardar</button>
                     </div>
                 </form>
+                <Modal show={modalExitoso}>
+                    <Modal.Header className='bg-info'>
+                        <Modal.Title>Proceso exitoso</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Estudiante agregado con éxito</p>
+                        <a onClick={() => this.closeModal()} href="ListarEstudiante" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
             </div>
         );
     }

@@ -1,13 +1,22 @@
 import React from "react";
+import './grupo.css';
+import Modal from 'react-bootstrap/Modal';
 
 class CrearGrupo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             nombre: "",
-            datosCargados: false
-
+            datosCargados: false,
+            modalExitoso: false
         }
+    }
+    openModal() {
+        this.setState({ modalExitoso: true })
+    }
+
+    closeModal() {
+        this.setState({ modalExitoso: false })
     }
 
     cambioValor = (e) => {
@@ -33,13 +42,13 @@ class CrearGrupo extends React.Component {
             .then(respuesta => respuesta.json())//recibe los datos en formato json
             .then((datosrepuesta) => {
                 console.log('Datos', datosrepuesta)
-                window.location = 'ListarGrupo'
+                this.openModal()
             })
             .catch(console.log)//muestra errores
     }
 
     render() {
-        const { nombre, descripcion, tiempo, datosCargados } = this.state;
+        const { nombre, descripcion, tiempo, datosCargados, modalExitoso} = this.state;
         return (
             <div className="container divFormulario mt-4 p-3 rounded-3">
                 <h1 className="mb-3">Agregar Grupo</h1>
@@ -57,7 +66,17 @@ class CrearGrupo extends React.Component {
                         </div>
                     </form>
                 </div>
-
+                <Modal show={modalExitoso}>
+                    <Modal.Header className='bg-info'>
+                        <Modal.Title>Proceso exitoso</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Grupo agregado con éxito</p>
+                        <a onClick={() => this.closeModal()} href="ListarGrupo" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
             </div>
         );
     }

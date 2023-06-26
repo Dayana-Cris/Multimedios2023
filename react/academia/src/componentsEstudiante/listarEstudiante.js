@@ -301,7 +301,7 @@ class ListarEstudiante extends React.Component {
                                             <td>{datosExtraidos.usuario}</td>
 
                                             <td>
-                                                <a name="" id="" className="btn btn-danger me-1" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
+                                                <a name="" id="" className="btn btn-danger me-1 mb-1" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
                                                 <a name="" id="" className="btn btn-primary" onClick={() => this.editar(datosExtraidos)} role="button">Editar</a>
                                             </td>
                                         </tr>
@@ -327,7 +327,7 @@ class ListarEstudiante extends React.Component {
                         <Modal.Title>Proceso exitoso</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Proceso realizado exitosamente</p>
+                        <p>Estudiante eliminado con éxito</p>
                         <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
                     </Modal.Body>
                     <Modal.Footer>

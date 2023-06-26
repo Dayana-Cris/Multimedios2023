@@ -130,7 +130,7 @@ class ListarCurso extends React.Component {
                                 {/* <small id="helpId" className="form-text text-muted">Nombre del curso</small> */}
                             </div>
                             <div className="text-center">
-                                <button type="reset" className="btn btn-danger me-3">Limpiar</button>
+                                {/* <button type="reset" className="btn btn-danger me-3">Limpiar</button> */}
                                 <button type="submit" className="btn btn-primary">Actualizar</button>
                             </div>
                         </form>
@@ -187,7 +187,7 @@ class ListarCurso extends React.Component {
                         <Modal.Title>Proceso exitoso</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <p>Proceso realizado exitosamente</p>
+                        <p>Grupo eliminado con éxito</p>
                         <a onClick={() => this.closeModal()} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
                     </Modal.Body>
                     <Modal.Footer>

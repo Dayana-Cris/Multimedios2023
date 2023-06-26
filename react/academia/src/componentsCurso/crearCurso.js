@@ -1,6 +1,6 @@
 import React from "react";
 import './curso.css';
-
+import Modal from 'react-bootstrap/Modal';
 
 class CrearCurso extends React.Component {
     constructor(props) {
@@ -9,10 +9,19 @@ class CrearCurso extends React.Component {
             nombre: "",
             descripcion: "",
             tiempo: "",
-            datosCargados: false
+            datosCargados: false,
+            modalExitoso: false,
 
         }
     }
+    openModal() {
+        this.setState({ modalExitoso: true })
+    }
+
+    closeModal() {
+        this.setState({ modalExitoso: false })
+    }
+
 
     cambioValor = (e) => {
         const state = this.state;
@@ -40,13 +49,14 @@ class CrearCurso extends React.Component {
             .then(respuesta => respuesta.json())//recibe los datos en formato json
             .then((datosrepuesta) => {
                 console.log('Datos', datosrepuesta)
-                window.location = 'ListarCurso'
+                this.openModal()
+                // window.location = 'ListarCurso'
             })
             .catch(console.log)//muestra errores
     }
 
     render() {
-        const { nombre, descripcion, tiempo, datosCargados } = this.state;
+        const { nombre, descripcion, tiempo, datosCargados, modalExitoso } = this.state;
         return (
             <div className="container divFormulario mt-4 p-3 rounded-3">
                 <h1 className="mb-3">Agregar Curso</h1>
@@ -72,6 +82,17 @@ class CrearCurso extends React.Component {
                         <button type="submit" className="btn btn-primary">Guardar</button>
                     </div>
                 </form>
+                <Modal show={modalExitoso}>
+                    <Modal.Header className='bg-info'>
+                        <Modal.Title>Proceso exitoso</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>Curso agregado con éxito</p>
+                        <a onClick={() => this.closeModal()} href="ListarCurso" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</a>
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
             </div>
         );
     }
