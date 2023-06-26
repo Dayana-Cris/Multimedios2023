@@ -51,6 +51,7 @@ class ListarCurso extends React.Component {
             .then((datosrepuesta) => {
                 console.log('Datos', datosrepuesta)
                 //window.location = '/ListarGrupo'
+                this.closeModal()
                 this.openModal('exitoso')
                 this.cargarDatos()
             })
@@ -114,10 +115,7 @@ class ListarCurso extends React.Component {
         // aqui pasa a ser una constante
         const { datosCargados, datosCursos, modalOpen, nombre, id, modalBorrar,modalExitoso } = this.state
         return (
-            <div className='container'style={{backgroundImage: `url("/public/img/fondoCursos.jpg")`,
-                     backgroundRepeat: "no-repeat",
-                     backgroundSize: "cover"
-                 }}>
+            <div className='container-fluid'>
                 <Modal show={modalOpen}>
                     <Modal.Header closeButton onClick={() => this.closeModal()}>
                         <Modal.Title>Editar Curso</Modal.Title>
@@ -141,6 +139,9 @@ class ListarCurso extends React.Component {
                     </Modal.Footer>
                 </Modal>
                 <h1>Listar Grupo</h1>
+                <div className='d-flex justify-content-start'>
+                    <a name="" id="" className="btn btn-dark mb-2" href="CrearGrupo" role="button">Agregar [+]</a>
+                </div>
                 <div className="table-responsive">
                     <table className="table table-primary">
                         <thead>
@@ -160,7 +161,7 @@ class ListarCurso extends React.Component {
                                             <td>{datosExtraidos.nombre}</td>
 
                                             <td>
-                                                <a name="" id="" className="btn btn-danger" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
+                                                <a name="" id="" className="btn btn-danger me-1" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
                                                 <a name="" id="" className="btn btn-primary" onClick={() => this.editar(datosExtraidos)} role="button">Editar</a>
                                             </td>
                                         </tr>

@@ -41,18 +41,18 @@ class CrearGrupo extends React.Component {
     render() {
         const { nombre, descripcion, tiempo, datosCargados } = this.state;
         return (
-            <div className="container-fluid">
+            <div className="container divFormulario mt-4 p-3 rounded-3">
                 <h1 className="mb-3">Agregar Grupo</h1>
-                <div className="d-flex justify-content-center align-items-center">
+                <div>
                     <form id="formulario" onSubmit={this.enviarDatos}>
                         <div className="mb-3" >
-                            <label htmlFor="" className="form-label">Nombre</label>
+                            <label htmlFor="" className="form-label d-flex justify-content-start">Nombre</label>
                             <input required type="text" className="form-control" name="nombre" id="nombre" aria-describedby="helpId"
                                 placeholder="Ingrese el nombre del grupo" onChange={this.cambioValor} value={nombre}></input>
                             {/* <small id="helpId" className="form-text text-muted">Nombre del curso</small> */}
                         </div>
                         <div className="text-center">
-                            <button type="reset" className="btn btn-danger me-3">Limpiar</button>
+                        <a name="" id="" className="btn btn-secondary me-2 " href="ListarGrupo" role="button">Lista grupos</a>
                             <button type="submit" className="btn btn-primary">Guardar</button>
                         </div>
                     </form>

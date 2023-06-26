@@ -57,6 +57,7 @@ class ListarEstudiante extends React.Component {
             .then(respuesta => respuesta.json())//recibe los datos en formato json
             .then((datosrepuesta) => {
                 // window.location = '/ListarEstudiante'
+                this.closeModal()
                 this.openModal('exitoso')
                 this.cargarDatos()
             })
@@ -101,7 +102,7 @@ class ListarEstudiante extends React.Component {
             apellidomaterno: apellidomaterno,
             nacionalidad: nacionalidad,
             idCarreras: idCarreras,
-            usuario: 'profesora D'
+            usuario: 'profesora DC'
         }
         fetch("https://paginas-web-cr.com/ApiPHP/apis/ActualizarEstudiantes.php",
             {
@@ -122,7 +123,7 @@ class ListarEstudiante extends React.Component {
             this.setState({ modalBorrar: true, id })
         }
         if (accion == 'exitoso') {
-            this.setState({ modalExitoso: true})
+            this.setState({ modalExitoso: true })
         }
     }
 
@@ -161,7 +162,7 @@ class ListarEstudiante extends React.Component {
         const { datosCargados, datosCursos, modalOpen, id, nombre, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, apellidopaterno,
             apellidomaterno, nacionalidad, idCarreras, usuario, opciones, modalBorrar, modalExitoso } = this.state
         return (
-            <div className='container'>
+            <div className='container-fluid'>
                 <Modal show={modalOpen}>
                     <Modal.Header closeButton onClick={() => this.closeModal()}>
                         <Modal.Title>Editar estudiante</Modal.Title>
@@ -245,7 +246,7 @@ class ListarEstudiante extends React.Component {
                                 </select>
                             </div>
                             <div className="text-center">
-                                <button type="reset" className="btn btn-danger me-3">Limpiar</button>
+                                {/* <button type="reset" className="btn btn-danger me-3">Limpiar</button> */}
                                 <button type="submit" className="btn btn-primary">Actualizar</button>
                             </div>
                         </form>
@@ -254,7 +255,9 @@ class ListarEstudiante extends React.Component {
                     </Modal.Footer>
                 </Modal>
                 <h1>Listar Estudiantes</h1>
-                <a name="" id="" className="btn btn-dark mb-2" href="CrearEstudiante" role="button">Agregar [+]</a>
+                <div className='d-flex justify-content-start'>
+                    <a name="" id="" className="btn btn-dark mb-2" href="CrearEstudiante" role="button">Agregar [+]</a>
+                </div>
                 <div className="table-responsive">
                     <table className="table table-primary">
                         <thead>
@@ -298,7 +301,7 @@ class ListarEstudiante extends React.Component {
                                             <td>{datosExtraidos.usuario}</td>
 
                                             <td>
-                                                <a name="" id="" className="btn btn-danger" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
+                                                <a name="" id="" className="btn btn-danger me-1" onClick={() => this.openModal('eliminar', datosExtraidos.id)} role="button">Borrar</a>
                                                 <a name="" id="" className="btn btn-primary" onClick={() => this.editar(datosExtraidos)} role="button">Editar</a>
                                             </td>
                                         </tr>

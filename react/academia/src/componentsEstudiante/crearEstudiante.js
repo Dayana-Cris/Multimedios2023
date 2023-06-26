@@ -1,4 +1,5 @@
 import React from "react";
+import './estudiante.css';
 
 class CrearEstudiante extends React.Component {
     constructor(props) {
@@ -24,7 +25,7 @@ class CrearEstudiante extends React.Component {
     }
 
     cargarGrupos = (e) => {
-       // e.preventDefault();
+        // e.preventDefault();
 
         const { idCarreras, opciones } = this.state;
         fetch("https://paginas-web-cr.com/ApiPHP/apis/ListaGrupo.php")//url de peticion de datos
@@ -93,87 +94,87 @@ class CrearEstudiante extends React.Component {
         const { id, nombre, cedula, correoelectronico, telefono, telefonocelular, fechanacimiento, sexo, direccion, apellidopaterno,
             apellidomaterno, nacionalidad, idCarreras, usuario, datosCargados, opciones } = this.state;
         return (
-            <div>
+            <div className="container divFormulario mt-4 p-5 mb-5 rounded-3">
                 <h1 className="mb-3">Agregar Estudiante</h1>
                 <form id="formulario" onSubmit={this.enviarDatos}>
                     <div className="mb-3" >
                         <input type="hidden" id="id" name="id" onChange={this.cambioValor} value={id}></input>
-                        <label htmlFor="" className="form-label">Nombre</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Nombre</label>
                         <input required type="text" className="form-control" name="nombre" id="nombre" aria-describedby="helpId"
                             placeholder="Ingrese el nombre del estudiante" onChange={this.cambioValor} value={nombre}></input>
                         {/* <small id="helpId" className="form-text text-muted">Nombre del curso</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Apellido paterno</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Apellido paterno</label>
                         <input required type="text" className="form-control" name="apellidopaterno" id="apellidopaterno" aria-describedby="helpId"
                             placeholder="Ingrese el apellido paterno" onChange={this.cambioValor} value={apellidopaterno}></input>
                         {/* <small id="helpId" className="form-text text-muted">Apellido paterno</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Apellido materno</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Apellido materno</label>
                         <input required type="text" className="form-control" name="apellidomaterno" id="apellidomaterno" aria-describedby="helpId"
                             placeholder="Ingrese el apellido materno" onChange={this.cambioValor} value={apellidomaterno}></input>
                         {/* <small id="helpId" className="form-text text-muted">apellido materno</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Cedula</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Cedula</label>
                         <input required type="text" className="form-control" name="cedula" id="cedula" aria-describedby="helpId"
                             placeholder="Ingrese la cedula" onChange={this.cambioValor} value={cedula}></input>
                         {/* <small id="helpId" className="form-text text-muted">Cedula del estudiante</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Correo electronico</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Correo electronico</label>
                         <input required type="text" className="form-control" name="correoelectronico" id="correoelectronico" aria-describedby="helpId"
                             placeholder="Ingrese el correo electronico" onChange={this.cambioValor} value={correoelectronico}></input>
                         {/* <small id="helpId" className="form-text text-muted">Correoelectronico</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Telefono</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Telefono</label>
                         <input required type="text" className="form-control" name="telefono" id="telefono" aria-describedby="helpId"
                             placeholder="Ingrese el telefono" onChange={this.cambioValor} value={telefono}></input>
                         {/* <small id="helpId" className="form-text text-muted">Telefono</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Celular</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Celular</label>
                         <input required type="text" className="form-control" name="telefonocelular" id="telefonocelular" aria-describedby="helpId"
                             placeholder="Ingrese el telefono celular" onChange={this.cambioValor} value={telefonocelular}></input>
                         {/* <small id="helpId" className="form-text text-muted">Telefono celular</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Fecha de nacimiento</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Fecha de nacimiento</label>
                         <input required type="date" className="form-control" name="fechanacimiento" id="fechanacimiento" aria-describedby="helpId"
                             placeholder="Ingrese la fecha de nacimiento" onChange={this.cambioValor} value={fechanacimiento}></input>
                         {/* <small id="helpId" className="form-text text-muted">Fecha de nacimiento</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Genero</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Genero</label>
                         <input required type="text" className="form-control" name="sexo" id="sexo" aria-describedby="helpId"
                             placeholder="Ingrese el genero del estudiante" onChange={this.cambioValor} value={sexo}></input>
                         {/* <small id="helpId" className="form-text text-muted">Genero</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Nacionalidad</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Nacionalidad</label>
                         <input required type="text" className="form-control" name="nacionalidad" id="nacionalidad" aria-describedby="helpId"
                             placeholder="Ingrese la nacionalidad del estudiante" onChange={this.cambioValor} value={nacionalidad}></input>
                         {/* <small id="helpId" className="form-text text-muted">Nacionalidad</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Direccion</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Direccion</label>
                         <input required type="text" className="form-control" name="direccion" id="direccion" aria-describedby="helpId"
                             placeholder="Ingrese la direccion del estudiante" onChange={this.cambioValor} value={direccion}></input>
                         {/* <small id="helpId" className="form-text text-muted">Direccion</small> */}
                     </div>
                     <div className="mb-3">
-                        <label htmlFor="" className="form-label">Grupo</label>
+                        <label htmlFor="" className="form-label d-flex justify-content-start">Grupo</label>
                         <select required className="form-select" value={idCarreras} onChange={this.cambioSelect}>
-                        <option disabled selected value="">Seleccione uno</option>
+                            <option disabled selected value="">Seleccione uno</option>
                             {opciones.map((option) => (
                                 <option key={option.id} value={option.id}>{option.nombre}</option>
                             ))}
                         </select>
                     </div>
                     <div className="text-center">
-                        <button type="reset" className="btn btn-danger me-3">Limpiar</button>
+                        <a name="" id="" className="btn btn-secondary me-2 " href="ListarEstudiante" role="button">Lista estudiantes</a>
                         <button type="submit" className="btn btn-primary">Guardar</button>
                     </div>
                 </form>
