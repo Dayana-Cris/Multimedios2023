@@ -30,15 +30,14 @@ class Dashboard extends React.Component {
                             <img className="d-block w-100" src="img/index/estudiando1.jpg" alt="Imagen 2" />
                             <Carousel.Caption>
                                 <h3>Estudiantes</h3>
-                                <p>Nuestros estudiantes, cuentan con espacios abiertos donde pueden relajarse y estudiar
-                                    tranquilamente</p>
+                                <p>Nuestros estudiantes, cuentan con espacios abiertos donde pueden relajarse y estudiar</p>
                             </Carousel.Caption>
                         </Carousel.Item>
                         <Carousel.Item>
                             <img className="d-block w-100" src="img/index/estudiantes1.jpg" alt="Imagen 2" />
                             <Carousel.Caption>
                                 <h3>Profesores</h3>
-                                <p>Contamos con más de 100 profesores capacitados para enseñarte de una manera innovadora.
+                                <p>Contamos con más de 100 profesores capacitados para enseñarte modernamente.
                                 </p>
                             </Carousel.Caption>
                         </Carousel.Item>
