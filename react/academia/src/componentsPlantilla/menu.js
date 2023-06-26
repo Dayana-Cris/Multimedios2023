@@ -8,7 +8,7 @@ class Menu extends React.Component {
     state = {}
     render() {
         return (
-            <nav className="navbar navbar-dark bg-dark navbar-expand-lg navbar-expand-xl navbar-expand-md">
+            <nav className="navbar navbar-dark bg-dark navbar-expand-lg navbar-expand-xl navbar-expand-md p-4">
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTooglerDemo01" aria-controls="navbarTooglerDemo01" aria-expanded="false"
                     aria-label="Toogle navigation">

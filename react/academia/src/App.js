@@ -6,6 +6,7 @@ import CrearCurso from './componentsCurso/crearCurso';
 import CrearGrupo from './componentsGrupo/crearGrupo';
 import CrearEstudiante from './componentsEstudiante/crearEstudiante';
 import Menu from './componentsPlantilla/menu';
+import Footer from './componentsPlantilla/footer';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Dashboard from './componentsPlantilla/dashboard';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/CrearEstudiante" component={CrearEstudiante}></Route>
         <Route></Route>
       </Router>
+      <Footer />
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
